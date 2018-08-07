@@ -1,3 +1,4 @@
+var args = process.argv.slice(2);
 var request = require('request');
 var secretToken = require('./secrets');
 var fs = require('fs');
@@ -45,7 +46,7 @@ function downloadImageByURL(url, filePath) {
 //downloadImageByURL("https://avatars2.githubusercontent.com/u/2741?v=3&s=466", "avatars/kvirani.jpg");
 
 
-getRepoContributors("jquery", "jquery", function(err, body) {
+getRepoContributors(args[0], args[1], function(err, body) {
   console.log("Errors:", err);
   var bodyObj = JSON.parse(body);
 
