@@ -23,7 +23,13 @@ function getRepoContributors(repoOwner, repoName, callback) {
 
 
 
-getRepoContributors("varunpositive", "SensorPlay", function(err, body) {
+getRepoContributors("jquery", "jquery", function(err, body) {
   console.log("Errors:", err);
-  console.log("Result:", body);
+  var bodyObj = JSON.parse(body);
+  bodyObj.forEach(function(element) {
+  console.log("Avatar URL: "+element.avatar_url);
+});
+
+  // console.log("Avatar URL: "+bodyObj[0].avatar_url);
+
 });
